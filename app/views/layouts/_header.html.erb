@@ -1,0 +1,40 @@
+<header class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<!--a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<a class="brand" href="#">VencimientosOnline.com</a>
+			</a-->
+			<%= link_to "VencimientosOnline.com", '/static_pages/home', id: "logo" %>
+			<nav>
+				<div class="nav pull-right">
+					<!--ul class="nav">
+						<li><a href="/static_pages/about">Acerca de</a></li>
+						<li><a href="/static_pages/contact">Contacto</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Más <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li class="divider"></li>
+								<li class="nav-header">Nav header</li>
+								<li><a href="#">Separated link</a></li>
+								<li><a href="#">One more separated link</a></li>
+							</ul>
+						</li>
+					</ul-->
+					<form class="navbar-form pull-right">
+						<input class="span2" type="text" placeholder="Email">
+						<input class="span2" type="password" placeholder="Contraseña">
+						<!--button type="submit" class="btn">Entrar</button-->
+						<%= link_to "Entrar", '#', class: "btn" %>
+						<!--%= link_to "Registrarse", '#', class: "btn" %-->
+					</form>
+				</div><!--/.nav-collapse -->
+			</nav>
+		</div>
+	</div>
+</header>
