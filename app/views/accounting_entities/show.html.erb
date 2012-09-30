@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @accounting_entity.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @accounting_entity.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_accounting_entity_path(@accounting_entity) %> |
+<%= link_to 'Back', accounting_entities_path %>

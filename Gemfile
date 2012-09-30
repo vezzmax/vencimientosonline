@@ -5,9 +5,8 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
 group :production, :staging do
-  gem 'pg'
+  gem 'pg', '0.12.2'
 end
 
 group :development, :test do
@@ -22,7 +21,7 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-
+  gem 'therubyracer'
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -46,4 +45,4 @@ gem 'jquery-rails'
 
 gem 'execjs'
 
-gem 'therubyracer'
+
