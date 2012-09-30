@@ -40,7 +40,8 @@ test:
 
 production:
   adapter: postgresql
-  database: radiant_live
-  username: <username>
-  password: <password>
-  host: localhost
+  database: d7sbtc34biv6vg
+  username: pnwqpqfbhmdlkr
+  password: pq_Rwg6jf1iMlpvFgrGG0waUsZ
+  host: ec2-54-243-235-123.compute-1.amazonaws.com
+  port: 5432
