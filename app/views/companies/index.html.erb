@@ -1,10 +1,10 @@
-<h1>Listing companies</h1>
+<h1>Companías</h1>
 
-<table>
+<table class="table table-bordered">
   <tr>
-    <th>Name</th>
-    <th>Cuit</th>
-    <th>Close date</th>
+    <th>Nombre</th>
+    <th>CUIT</th>
+    <th>Fecha de cierre</th>
     <th>Accounting entity</th>
     <th></th>
     <th></th>
@@ -17,7 +17,7 @@
     <td><%= company.CUIT %></td>
     <td><%= company.close_date %></td>
     <td><%= company.accounting_entity_id %></td>
-    <td><%= link_to 'Show', company %></td>
+    <td><%= link_to 'Detalles', company %></td>
     <td><%= link_to 'Edit', edit_company_path(company) %></td>
     <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
