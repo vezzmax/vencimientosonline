@@ -1,13 +1,20 @@
 Vencimientos::Application.routes.draw do
+
   get "static_pages/home"
 
   get "static_pages/contact"
 
   get "static_pages/about"
 
+  get "users/new"
+  
   resources :companies
 
   resources :accounting_entities
+
+  resources :users
+
+  match '/registrarse',  to: 'users#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -22,7 +29,6 @@ Vencimientos::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
   # Sample resource route with options:
   #   resources :products do
   #     member do
