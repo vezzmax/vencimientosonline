@@ -1,5 +1,7 @@
 Vencimientos::Application.routes.draw do
 
+  resources :taxes
+
   get "static_pages/home"
 
   get "static_pages/contact"

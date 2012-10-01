@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @taxis.name %>
+</p>
+
+<p>
+  <b>Period:</b>
+  <%= @taxis.period %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @taxis.category %>
+</p>
+
+
+<%= link_to 'Edit', edit_taxis_path(@taxis) %> |
+<%= link_to 'Back', taxes_path %>

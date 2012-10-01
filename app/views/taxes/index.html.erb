@@ -1,0 +1,27 @@
+<h1>Listing taxes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Period</th>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @taxes.each do |taxis| %>
+  <tr>
+    <td><%= taxis.name %></td>
+    <td><%= taxis.period %></td>
+    <td><%= taxis.category %></td>
+    <td><%= link_to 'Show', taxis %></td>
+    <td><%= link_to 'Edit', edit_taxis_path(taxis) %></td>
+    <td><%= link_to 'Destroy', taxis, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tax', new_taxis_path %>
