@@ -1,10 +1,10 @@
-<%= form_for(@taxis) do |f| %>
-  <% if @taxis.errors.any? %>
+<%= form_for(@tax) do |f| %>
+  <% if @tax.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@taxis.errors.count, "error") %> prohibited this taxis from being saved:</h2>
+      <h2><%= pluralize(@tax.errors.count, "error") %> prohibited this tax from being saved:</h2>
 
       <ul>
-      <% @taxis.errors.full_messages.each do |msg| %>
+      <% @tax.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :period %><br />
-    <%= f.select(:period, Tax.periods) %>
+    <%= f.select(:period, Tax.periods, :prompt => "Seleccione un Período") %>
   </div>
   <div class="field">
     <%= f.label :category %><br />
-    <%= f.select(:category, Tax.categories) %>
+    <%= f.select(:category, Tax.categories, :prompt => "Seleccione una Categoría") %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -35,7 +35,7 @@ describe TaxesController do
   end
 
   describe "GET index" do
-    it "assigns all taxes as @taxes" do
+    it "assigns all taxeses as @taxeses" do
       tax = Tax.create! valid_attributes
       get :index, {}, valid_session
       assigns(:taxes).should eq([tax])
