@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @expiration.date %>
+</p>
+
+<p>
+  <b>Endingfirst:</b>
+  <%= @expiration.endingFirst %>
+</p>
+
+<p>
+  <b>Endinglast:</b>
+  <%= @expiration.endingLast %>
+</p>
+
+<p>
+  <b>Tax:</b>
+  <%= @expiration.tax_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_expiration_path(@expiration) %> |
+<%= link_to 'Back', expirations_path %>

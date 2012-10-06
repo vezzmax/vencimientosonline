@@ -1,0 +1,29 @@
+<h1>Listing expirations</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Endingfirst</th>
+    <th>Endinglast</th>
+    <th>Tax</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @expirations.each do |expiration| %>
+  <tr>
+    <td><%= expiration.date %></td>
+    <td><%= expiration.endingFirst %></td>
+    <td><%= expiration.endingLast %></td>
+    <td><%= expiration.tax_id %></td>
+    <td><%= link_to 'Show', expiration %></td>
+    <td><%= link_to 'Edit', edit_expiration_path(expiration) %></td>
+    <td><%= link_to 'Destroy', expiration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Expiration', new_expiration_path %>
