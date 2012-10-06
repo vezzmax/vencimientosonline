@@ -16,7 +16,7 @@
 
 ActiveSupport::Inflector.inflections do |inflect|
    inflect.plural 'tax', 'taxes'
-   inflect.plural 'taxi', 'taxis'
+  # inflect.plural 'taxi', 'taxis'
    inflect.singular 'taxes', 'tax'
-   inflect.singular 'taxis', 'taxi'
+  # inflect.singular 'taxis', 'taxi'
 end

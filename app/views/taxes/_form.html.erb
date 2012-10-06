@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :period %><br />
-    <%= f.select(:period, Tax.periods, :prompt => "Seleccione un Período") %>
+    <%= f.text_field :period %>
   </div>
   <div class="field">
-    <%= f.label :category %><br />
-    <%= f.select(:category, Tax.categories, :prompt => "Seleccione una Categoría") %>
+    <%= f.label :agency_id %><br />
+    <%= f.number_field :agency_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
