@@ -11,13 +11,13 @@ describe Expiration do
   it {should be_valid}
 
 
-describe "with endingFirst greater than endingLast" do
-  before { 
-  	@expiration.endingFirst = "7"
-    @expiration.endingLast = "1"
-  	 }
-  it { should_not be_valid }
-end
+  describe "with endingFirst greater than endingLast" do
+  	before { 
+  		@expiration.endingFirst = "7"
+  		@expiration.endingLast = "1"
+  	}
+  	it { should_not be_valid }
+  end
 
 
 end

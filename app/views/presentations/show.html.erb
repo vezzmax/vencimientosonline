@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @presentation.date %>
+</p>
+
+<p>
+  <b>Detail:</b>
+  <%= @presentation.detail %>
+</p>
+
+<p>
+  <b>Expiration:</b>
+  <%= @presentation.expiration_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @presentation.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_presentation_path(@presentation) %> |
+<%= link_to 'Back', presentations_path %>

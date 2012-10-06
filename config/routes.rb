@@ -1,5 +1,7 @@
 Vencimientos::Application.routes.draw do
 
+  resources :presentations
+
   resources :expirations
 
   resources :taxes
