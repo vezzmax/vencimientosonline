@@ -8,6 +8,13 @@ FactoryGirl.define do
     name  "Monotributo"
     period "Mensual"
     agency
-  end  
+  end 
+
+   factory :expiration do
+    date  Date.tomorrow
+    endingFirst "1"
+    endingLast "3"
+    tax
+  end
 
 end

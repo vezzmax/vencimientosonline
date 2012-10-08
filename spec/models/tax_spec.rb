@@ -31,4 +31,27 @@ describe Tax do
       end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
     end    
   end
+
+  describe "destroy cascade" do
+    before { @tax.save }
+    let!(:exp1) do 
+      FactoryGirl.create(:expiration, tax: @tax)
+    end
+    let!(:exp2) do
+      FactoryGirl.create(:expiration, tax: @tax)
+    end
+
+    it "should destroy associated expirations" do
+      expirations = @tax.expirations
+      expirations.length.should == 2
+      print expirations
+      expirations.each do |expiration|
+        Expiration.find_by_id(expiration.id).should_not be_nil
+      end
+      @tax.destroy
+      expirations.each do |expiration|
+        Expiration.find_by_id(expiration.id).should be_nil
+      end
+    end
+  end
 end

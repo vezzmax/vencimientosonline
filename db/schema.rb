@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121006191335) do
+ActiveRecord::Schema.define(:version => 20121008021128) do
 
   create_table "accounting_entities", :force => true do |t|
     t.string   "name"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(:version => 20121006191335) do
   create_table "agencies", :force => true do |t|
     t.string   "name"
     t.string   "scope"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "associated_taxes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "tax_id"
+    t.integer  "company_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -43,6 +51,21 @@ ActiveRecord::Schema.define(:version => 20121006191335) do
     t.integer  "tax_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "presentations", :force => true do |t|
+    t.date     "date"
+    t.string   "detail"
+    t.integer  "expiration_id"
+    t.integer  "user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "taxes", :force => true do |t|
