@@ -19,6 +19,7 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe ExpirationsController do
+=begin
 
   # This should return the minimal set of attributes required to create a valid
   # Expiration. As you add validations to Expiration, be sure to
@@ -160,5 +161,6 @@ describe ExpirationsController do
       response.should redirect_to(expirations_url)
     end
   end
+=end
 
 end

@@ -20,6 +20,7 @@ require 'spec_helper'
 
 describe TaxesController do
 
+=begin
   # This should return the minimal set of attributes required to create a valid
   # Tax. As you add validations to Tax, be sure to
   # update the return value of this method accordingly.
@@ -160,5 +161,6 @@ describe TaxesController do
       response.should redirect_to(taxes_url)
     end
   end
+=end
 
 end
