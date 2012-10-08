@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: expirations
+#
+#  id          :integer          not null, primary key
+#  date        :date
+#  endingFirst :integer
+#  endingLast  :integer
+#  tax_id      :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 require 'spec_helper'
 
 describe Expiration do
