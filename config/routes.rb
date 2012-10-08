@@ -20,8 +20,6 @@ Vencimientos::Application.routes.draw do
 
   resources :accounting_entities
 
-  resources :users
-
   match '/registrarse',  to: 'users#new'
 
   # The priority is based upon order of creation:
