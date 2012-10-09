@@ -8,4 +8,5 @@
 
 acEntity = AccountingEntity.create(name: "Estudio Apphatie")
 company = acEntity.companies.create(name: "Compania NN", verificationDigit: "4", closeDate: Date.today+40 )
-
+afip = Agency.create(name:"AFIP", scope:"Nacional")
+arba = Agency.create(name:"ARBA", scope:"Provincial")

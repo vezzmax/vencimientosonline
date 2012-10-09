@@ -17,7 +17,7 @@ class Company < ActiveRecord::Base
 
   validates :name, presence: true
   validates :closeDate, presence: true
-  validates :verificationDigit, presence: true, length: { maximum: 1}
+  validates :verificationDigit, presence: true, :inclusion => { :in => 0..9 }
   validates :accounting_entity_id, presence: true
 
 end

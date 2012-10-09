@@ -12,4 +12,12 @@
 class Agency < ActiveRecord::Base
   attr_accessible :name, :scope
   has_many :taxes, :class_name => "Tax"
+  SCOPES = %w(Nacional Provincial Municipal)
+
+  validates :name, presence: true
+  validates_inclusion_of :scope, :in => SCOPES
+
+  def self.scopes 
+  	return SCOPES
+  end
 end

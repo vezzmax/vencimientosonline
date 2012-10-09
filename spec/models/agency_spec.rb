@@ -19,6 +19,14 @@ describe Agency do
 
   subject { @agency }
  
-  #it { should respond_to(:authenticate) }
+  it { should respond_to(:name) }
+  it { should respond_to(:scope) }
   it { should respond_to(:taxes) }
+  it { should be_valid}
+
+  describe "scope value in scope definitions" do
+    before { @agency.scope = "invalid"}
+    it {should_not be_valid}
+  end
+
 end
