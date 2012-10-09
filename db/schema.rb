@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(:version => 20121008202423) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
-    t.string   "CUIT"
-    t.date     "close_date"
+    t.integer  "verificationDigit"
+    t.date     "closeDate"
     t.integer  "accounting_entity_id"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false

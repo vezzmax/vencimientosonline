@@ -4,7 +4,7 @@
 #
 #  id                   :integer          not null, primary key
 #  name                 :string(255)
-#  CUIT                 :string(255)
+#  verificationDigit    :integer
 #  close_date           :date
 #  accounting_entity_id :integer
 #  created_at           :datetime         not null

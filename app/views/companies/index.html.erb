@@ -3,7 +3,7 @@
 <table class="table table-bordered">
   <tr>
     <th>Nombre</th>
-    <th>CUIT</th>
+    <th>Digito Verificador</th>
     <th>Fecha de cierre</th>
     <th>Accounting entity</th>
     <th></th>
@@ -14,7 +14,7 @@
 <% @companies.each do |company| %>
   <tr>
     <td><%= company.name %></td>
-    <td><%= company.CUIT %></td>
+    <td><%= company.verificationDigit %></td>
     <td><%= company.close_date %></td>
     <td><%= company.accounting_entity_id %></td>
     <td><%= link_to 'Detalles', company %></td>
