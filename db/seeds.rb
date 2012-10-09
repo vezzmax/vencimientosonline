@@ -6,6 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-AccountingEntity.create(name: "Estudio Apphatie")
-
+acEntity = AccountingEntity.create(name: "Estudio Apphatie")
+company = acEntity.companies.create(name: "Compania NN", verificationDigit: "4", closeDate: Date.today+40 )
 

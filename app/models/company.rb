@@ -15,5 +15,9 @@ class Company < ActiveRecord::Base
   attr_accessible :verificationDigit, :closeDate, :name
   belongs_to :accounting_entity
 
+  validates :name, presence: true
+  validates :closeDate, presence: true
+  validates :verificationDigit, presence: true, length: { maximum: 1}
+  validates :accounting_entity_id, presence: true
 
 end

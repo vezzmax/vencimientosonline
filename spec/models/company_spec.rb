@@ -15,22 +15,33 @@ require 'spec_helper'
 
 describe Company do
 
+  let(:accountingEntity) { FactoryGirl.create(:accountingEntity) }
+
   before do
-    @company = Company.new(name:"Compañia NN", verificationDigit: "4", closeDate: Date.today+40)
+    @company =  accountingEntity.companies.build(name: "Compania NN", verificationDigit: "4", closeDate: Date.today+40 )
   end
 
   subject { @company }
  
-  #it { should respond_to(:authenticate) }
   it { should respond_to(:name) }
-  it { should respond_to(:description) }
-  it { should respond_to(:companies) }
-  it { should respond_to(:users) }
+  it { should respond_to(:closeDate) }
+  it { should respond_to(:verificationDigit) }
+  it { should respond_to(:accounting_entity) }
+  it { should be_valid }
 
   describe "when name is not present" do
-    before { @ae.name = " " }
+    before { @company.name = " " }
     it { should_not be_valid }
   end
 
+  describe "when closeDate is not present" do
+    before { @company.closeDate = nil }
+    it { should_not be_valid }
+  end
+
+  describe "verificationDigit should be only 1 number from 0-9" do
+    before { @company.verificationDigit = 12 }
+    it { should_not be_valid }
+  end
 
 end

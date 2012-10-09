@@ -1,4 +1,17 @@
 FactoryGirl.define do
+
+  factory :accountingEntity do
+    name "Entidad Contable"
+    description "description"
+  end
+
+  factory :company do
+    name "Compania de testeo"
+    verificationDigit "5"
+    closeDate Date.today+100
+    accountingEntity
+  end
+
   factory :agency do
     name  "AFIP"
     scope "Nacional"
