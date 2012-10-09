@@ -24,7 +24,7 @@ describe Agency do
   it { should respond_to(:taxes) }
   it { should be_valid}
 
-  describe "scope value in scope definitions" do
+  describe "invalid scope value in scope definitions" do
     before { @agency.scope = "invalid"}
     it {should_not be_valid}
   end

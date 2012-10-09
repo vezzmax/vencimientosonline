@@ -56,7 +56,6 @@ describe Tax do
     it "should destroy associated expirations" do
       expirations = @tax.expirations
       expirations.length.should == 2
-      print expirations
       expirations.each do |expiration|
         Expiration.find_by_id(expiration.id).should_not be_nil
       end
