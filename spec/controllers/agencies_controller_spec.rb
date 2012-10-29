@@ -23,6 +23,7 @@ describe AgenciesController do
   # This should return the minimal set of attributes required to create a valid
   # Agency. As you add validations to Agency, be sure to
   # update the return value of this method accordingly.
+=begin
   def valid_attributes
     {}
   end
@@ -160,5 +161,6 @@ describe AgenciesController do
       response.should redirect_to(agencies_url)
     end
   end
+=end
 
 end

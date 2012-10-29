@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121008202423) do
+ActiveRecord::Schema.define(:version => 20121029015451) do
 
   create_table "accounting_entities", :force => true do |t|
     t.string   "name"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(:version => 20121008202423) do
   end
 
   create_table "associated_taxes", :force => true do |t|
-    t.integer  "user_id"
     t.integer  "tax_id"
     t.integer  "company_id"
     t.datetime "created_at", :null => false
@@ -67,6 +66,18 @@ ActiveRecord::Schema.define(:version => 20121008202423) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "supervisions", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "associated_tax_id"
+    t.integer  "level"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "supervisions", ["associated_tax_id"], :name => "index_supervisions_on_associated_tax_id"
+  add_index "supervisions", ["user_id", "associated_tax_id", "level"], :name => "index_supervisions_on_user_id_and_associated_tax_id_and_level", :unique => true
+  add_index "supervisions", ["user_id"], :name => "index_supervisions_on_user_id"
 
   create_table "taxes", :force => true do |t|
     t.string   "name"
