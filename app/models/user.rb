@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation
 
   #has_many :supervisions
+  has_many :presentations
 
   has_secure_password
 

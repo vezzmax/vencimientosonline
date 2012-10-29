@@ -12,5 +12,8 @@
 #
 
 class Presentation < ActiveRecord::Base
-  attr_accessible :date, :detail, :expiration_id, :user_id
+  attr_accessible :date, :detail
+
+  belongs_to :user
+  belongs_to :expiration
 end
