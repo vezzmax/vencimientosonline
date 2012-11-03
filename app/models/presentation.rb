@@ -2,18 +2,19 @@
 #
 # Table name: presentations
 #
-#  id            :integer          not null, primary key
-#  date          :date
-#  detail        :string(255)
-#  expiration_id :integer
-#  user_id       :integer
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
+#  id               :integer          not null, primary key
+#  date             :date
+#  expiration_date  :date
+#  detail           :string(255)
+#  asociated_tax_id :integer
+#  user_id          :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #
 
 class Presentation < ActiveRecord::Base
   attr_accessible :date, :detail
 
   belongs_to :user
-  belongs_to :expiration
+  belongs_to :associated_tax
 end

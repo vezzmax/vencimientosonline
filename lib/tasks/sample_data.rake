@@ -31,7 +31,7 @@ def make_accounting_entity
   3.times do |n|
     name = Faker::Company.name
     desc = Faker::Company.bs
-    AccountinEntity.create!(name: name, description: desc)  
+    AccountingEntity.create!(name: name, description: desc)  
   end
 end
 
