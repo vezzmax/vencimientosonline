@@ -12,4 +12,7 @@
 
 class Supervision < ActiveRecord::Base
   attr_accessible :associated_tax_id, :level, :user_id
+  belongs_to :user
+  belongs_to :associated_tax
+
 end

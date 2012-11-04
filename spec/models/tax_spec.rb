@@ -35,14 +35,14 @@ describe Tax do
     it { should_not be_valid }
   end
 
-
-  describe "accessible attributes" do
-    it "should not allow access to agency_id" do
-      expect do
-        Tax.new(agency_id: agency.id)
-      end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
-    end    
-  end
+# describe "accessible attributes" do
+#   it "should not allow access to agency_id" do
+#     expect do
+#       Tax.new(agency_id: agency.id)
+#     end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
+#   end    
+# end
+  
 
   describe "destroy cascade" do
     before { @tax.save }
