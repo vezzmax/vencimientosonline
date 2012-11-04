@@ -12,7 +12,7 @@
 #
 
 class Expiration < ActiveRecord::Base
-  attr_accessible :date, :endingFirst, :endingLast
+  attr_accessible :date, :endingFirst, :endingLast, :tax_id
   
   has_many :presentations
   belongs_to :tax

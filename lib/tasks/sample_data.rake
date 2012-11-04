@@ -9,6 +9,14 @@ namespace :db do
    end
 end
 
+namespace :db do
+  namespace :test do
+    task :prepare => :environment do
+      Rake::Task["db:seed"].invoke
+    end
+  end
+end
+
 def make_users
   admin = User.create!(name:     "Admin User",
                        email:    "example@vencimientosonline.com",
@@ -42,6 +50,7 @@ def make_companies
     aEntity.companies.create!(name: name, closeDate: date, verificationDigit: rand(10))  
   end
 end
+
 
 
 

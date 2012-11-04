@@ -1,0 +1,60 @@
+accounting_entities:
+ name: a
+ description: b
+
+agencies:
+  name: AFIP
+  scope: Nacional
+
+taxes:
+  - 
+    name: Autónomos
+    period: Mensual
+    agency_id: 1
+
+  - 
+    name: Monotributo
+    period: Mensual
+    agency_id: 1
+
+  - 
+    name: Empleadores
+    period: Mensual
+    agency_id: 1
+
+  - 
+    name: Ganancias Sociedades DDJJ
+    period: Mensual
+    agency_id: 1
+
+expirations:
+  
+  -
+    tax_id: 1
+    date: 2012-01-03
+    endingFirst: 0
+    endingLast: 1
+
+  -
+    tax_id: 1
+    date: 2012-01-04
+    endingFirst: 2
+    endingLast: 3
+
+  -
+    tax_id: 1
+    date: 2012-01-05
+    endingFirst: 4
+    endingLast: 5
+
+  -
+    tax_id: 1
+    date: 2012-01-06
+    endingFirst: 6
+    endingLast: 7
+
+  -
+    tax_id: 1
+    date: 2012-01-09
+    endingFirst: 8
+    endingLast: 9

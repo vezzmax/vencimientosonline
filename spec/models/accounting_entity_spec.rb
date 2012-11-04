@@ -29,5 +29,4 @@ describe AccountingEntity do
     before { @ae.name = " " }
     it { should_not be_valid }
   end
-
 end

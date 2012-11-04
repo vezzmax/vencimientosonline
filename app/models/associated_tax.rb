@@ -1,3 +1,6 @@
+# == Descripción
+# Representación de como un impuesto está asociado a una companía. Por ejemplo, 
+# la companía Morocco Inc. tiene asociado el impuesto Atónomos.
 # == Schema Information
 #
 # Table name: associated_taxes

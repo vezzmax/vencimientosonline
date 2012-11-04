@@ -38,4 +38,8 @@ describe Expiration do
   	it { should_not be_valid }
   end
 
+  describe "the seed should be run first with db:test:prepare" do
+    Expiration.count.should == 5
+  end
+
 end

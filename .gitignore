@@ -13,4 +13,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+#ignore mockup
 /mockups
+
+#ignore generated app documentation
+/doc/app
