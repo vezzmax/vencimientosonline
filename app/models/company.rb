@@ -33,8 +33,16 @@ class Company < ActiveRecord::Base
 	   #TODO: Generate expiration for close date in the object creation.
 	end
 
-	#Retorna la lista de impuestos que no tienen supervisor asociado.
-	def unattendedTaxes 
+	#Retorna la lista de impuestos que no tienen supervisor asociado en el nivel 1.
+	def unattendedTaxes
+		@unattendedTaxes = Array.new()
+		associated_taxes.each do |aTax|
+			supervisionsLevelOne = aTax.supervisions.where("level = 1")
+			if supervisionsLevelOne.empty?
+				@unattendedTaxes.push(aTax)
+			end 
+		end 
+		return @unattendedTaxes
 	end
 
 end

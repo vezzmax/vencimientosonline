@@ -50,13 +50,15 @@ describe Company do
       @tax = Tax.first
       @company.associateTax(@tax)
     }  
-    #it { @company.associated_taxes.count.should == 1 }
-   #  it "should have created an associated tax" do
-   #   AssociatedTax.count.should == 1
-   # end
-    subject { @tax}
+    it { @company.associated_taxes.count.should == 1 }
+    it "should have created an associated tax" do
+      @company.associated_taxes.count.should == 1
+    end
     it "should have company expirations created" do
       @company.company_expirations.count.should == 1
+    end
+    it "should have unnatendedTaxes" do
+      @company.unattendedTaxes.count.should == 1
     end
   end
 
