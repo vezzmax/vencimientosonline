@@ -5,9 +5,8 @@ namespace :db do
   task populate: :environment do
     make_accounting_entity
     make_users
-    #make_microposts
-    #make_relationships
-  end
+    make_companies
+   end
 end
 
 def make_users
@@ -32,6 +31,15 @@ def make_accounting_entity
     name = Faker::Company.name
     desc = Faker::Company.bs
     AccountingEntity.create!(name: name, description: desc)  
+  end
+end
+
+def make_companies
+  100.times do |n|
+    name = Faker::Company.name
+    date = Date.today + rand(365)
+    aEntity = AccountingEntity.find(rand(3)+1)    
+    aEntity.companies.create!(name: name, closeDate: date, verificationDigit: rand(10))  
   end
 end
 
