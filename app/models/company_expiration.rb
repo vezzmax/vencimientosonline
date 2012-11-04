@@ -11,4 +11,5 @@
 
 class CompanyExpiration < ActiveRecord::Base
   attr_accessible :associated_tax_id, :date
+  belongs_to :associated_tax
 end

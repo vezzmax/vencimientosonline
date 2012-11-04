@@ -44,14 +44,20 @@ describe Company do
     it { should_not be_valid }
   end
 
-  describe "associate tax should have created the associatedTax entity" do
+  describe "when a tax is associated to a company" do
     before {
       @company.save
-      tax = Tax.find_by_name("Monotributo");
-      @company.associateTax(tax)
+      @tax = Tax.first
+      @company.associateTax(@tax)
     }  
-    it { @company.associated_taxes.count.should == 1 }
-    it { AssociatedTax.count.should == 1}
+    #it { @company.associated_taxes.count.should == 1 }
+   #  it "should have created an associated tax" do
+   #   AssociatedTax.count.should == 1
+   # end
+    subject { @tax}
+    it "should have company expirations created" do
+      @company.company_expirations.count.should == 1
+    end
   end
 
 end
