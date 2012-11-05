@@ -16,10 +16,10 @@
 # one:
 #   name: MyString
 #   CUIT: MyString
-#   close_date: 2012-09-30
+#   closeDate: 2012-09-30
 #   accounting_entity_id: 1
 
 # two:
 #   name: MyString
-#   close_date: 2012-09-30
+#   closeDate: 2012-09-30
 #   accounting_entity_id: 1
