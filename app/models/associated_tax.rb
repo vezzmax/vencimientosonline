@@ -17,4 +17,9 @@ class AssociatedTax < ActiveRecord::Base
   has_many :supervisions
   has_many :company_expirations
   #has_many :users, through: :supervisions
+
+  #Retorna a partir de que nivel se puede agregar un supervisor
+  def minimumSupervisorLevel
+  	supervisions.count + 1
+  end
 end

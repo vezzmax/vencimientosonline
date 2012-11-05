@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   
   attr_accessible :email, :name, :password, :password_confirmation
 
-  #has_many :supervisions
+  has_many :supervisions
   has_many :presentations
 
   has_secure_password
@@ -30,4 +30,17 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
 
   before_save { |user| user.email = email.downcase }
+
+  #Vencimientos de nivel 1
+  def directExpirations
+    @de = Array.new()
+    supervisions.where(level: 1).each do |supervision|
+      @de.push(supervision.associated_tax.company_expirations)
+    end
+    return @de
+  end
+
+  def expirations(withinDays)
+  end
+
 end

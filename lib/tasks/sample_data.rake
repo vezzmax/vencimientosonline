@@ -13,6 +13,7 @@ namespace :db do
   namespace :test do
     task :prepare => :environment do
       Rake::Task["db:seed"].invoke
+      Rake::Task["db:populate"].invoke
     end
   end
 end

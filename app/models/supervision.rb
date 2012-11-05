@@ -15,4 +15,6 @@ class Supervision < ActiveRecord::Base
   belongs_to :user
   belongs_to :associated_tax
 
+  validates_presence_of :associated_tax_id
+
 end

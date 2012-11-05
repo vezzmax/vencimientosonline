@@ -29,6 +29,8 @@ describe User do
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:authenticate) }
+  #it { should respond_to(@user.expirations) }
+  #it { should respond_to(@user.expirations(1)) }
 
 
   it { should be_valid }
@@ -112,6 +114,22 @@ describe User do
   describe "with a password that's too short" do
   	before { @user.password = @user.password_confirmation = "a" * 5 }
   	it { should be_invalid }
+  end
+
+  describe "when a company has a tax assigned and the tax has a supervisor" do
+    before { 
+      @user = User.find(3)
+      @user.should_not be_nil
+      @company = Company.find(3)
+      @company.should_not be_nil
+      @tax = Tax.find(1)
+      @tax.should_not be_nil
+      @company.associateTax(@tax)
+      @company.associated_taxes.first.supervisions.create!(level: 1, user_id: @user.id)
+    }
+    it "should have 1 direct expiration to supervise" do
+       @user.directExpirations.size.should == 1
+    end
   end
 
 
