@@ -26,11 +26,10 @@
 							</ul>
 						</li>
 					</ul-->
-					<form class="navbar-form pull-right form-inline">
-						<input class="span2" type="text" placeholder="Email">
-						<input class="span2" type="password" placeholder="Contraseña">
-						<!--button type="submit" class="btn">Entrar</button-->
-						<%= link_to "Entrar", 'http://wbpreview.com/previews/WB00U99JJ/', class: "btn" %>
+					<form class="navbar-form pull-right form-inline" accept-charset="UTF-8" action="/sessions" method="post">
+						<input class="span2" type="text" placeholder="Email" id="session_email" name="session[email]">
+						<input class="span2" type="password" placeholder="Contraseña" id="session_password" name="session[password]">
+						<button type="submit" class="btn" name="commit" value="Sign in">Entrar</button>
 						<!--%= link_to "Registrarse", '#', class: "btn" %-->
 					</form>
 				</div><!--/.nav-collapse -->

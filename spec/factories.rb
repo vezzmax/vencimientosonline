@@ -30,4 +30,11 @@ FactoryGirl.define do
     tax
   end
 
+  factory :user do
+    name     "Maximo Vezzosi"
+    email    "vezzmax@gmail.com"
+    password "foobar"
+    password_confirmation "foobar"
+  end
+
 end
