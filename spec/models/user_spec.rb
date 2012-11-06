@@ -29,6 +29,7 @@ describe User do
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:authenticate) }
+  it { should respond_to(:remember_token) }
   #it { should respond_to(@user.expirations) }
   #it { should respond_to(@user.expirations(1)) }
 
@@ -130,6 +131,11 @@ describe User do
     it "should have 1 direct expiration to supervise" do
        @user.directExpirations.size.should == 1
     end
+  end
+
+  describe "remember token" do
+    before { @user.save }
+    its(:remember_token) { should_not be_blank }
   end
 
 
