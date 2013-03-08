@@ -1,5 +1,6 @@
 <% provide(:title, @user.name) %>
 <% if signed_in? %>
+<p class="text-info">Estudio Contable: <strong><%= @user.accounting_entity.name %></strong></p>
 <!-- <p id="notice"><%= notice %></p>
  -->
 <!-- <p>

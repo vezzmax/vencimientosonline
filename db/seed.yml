@@ -3,8 +3,12 @@ accounting_entities:
  description: b
 
 agencies:
-  name: AFIP
-  scope: Nacional
+  -
+    name: AFIP
+    scope: Nacional
+  -
+    name: ARBA
+    scope: Provincial
 
 taxes:
   - 
