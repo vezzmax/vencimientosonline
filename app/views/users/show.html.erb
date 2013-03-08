@@ -20,12 +20,14 @@
         <table class="table table-striped">
 		  <tr>
 		    <th>Impuesto</th>
+		    <th>Empresa</th>
 		    <th>Fecha de Vencimiento</th>
 		  </tr>
 
-		<% @companyExpirations[0].each do |ce| %>
-		  <tr>
+		<% @companyExpirations.each do |ce| %>
+		  <tr class="label label-warning">
 		    <td><%= ce.associated_tax.tax.name %></td>
+		    <td><%= ce.associated_tax.company.name %></td>
 		    <td><%= ce.date %></td>
 		  </tr>
 		<% end %>

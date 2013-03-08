@@ -1,6 +1,6 @@
-<h1>Listing taxes</h1>
+<h1>Impuestos</h1>
 
-<table>
+<table class="table table-striped">
   <tr>
     <th>Name</th>
     <th>Period</th>
@@ -14,7 +14,7 @@
   <tr>
     <td><%= tax.name %></td>
     <td><%= tax.period %></td>
-    <td><%= tax.agency_id %></td>
+    <td><%= tax.agency.name %></td>
     <td><%= link_to 'Show', tax %></td>
     <td><%= link_to 'Edit', edit_tax_path(tax) %></td>
     <td><%= link_to 'Destroy', tax, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,6 +1,6 @@
 accounting_entities:
- name: a
- description: b
+ name: Estudio Apphatie
+ description: El estudio principal
 
 agencies:
   -

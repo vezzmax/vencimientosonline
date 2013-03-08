@@ -38,8 +38,8 @@ class User < ActiveRecord::Base
   def directExpirations
     @de = Array.new()
     supervisions.where(level: 1).each do |supervision|
-      #@de.push(supervision.associated_tax.company_expirations)
-      @de + supervision.associated_tax.company_expirations
+      @de.push(*supervision.associated_tax.company_expirations)
+      #@de + supervision.associated_tax.company_expirations
     end
     return @de
   end
