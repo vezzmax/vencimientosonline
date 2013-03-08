@@ -16,6 +16,8 @@ class AssociatedTax < ActiveRecord::Base
   attr_accessible :company_id, :tax_id
   has_many :supervisions
   has_many :company_expirations
+
+  belongs_to :tax
   #has_many :users, through: :supervisions
 
   #Retorna a partir de que nivel se puede agregar un supervisor

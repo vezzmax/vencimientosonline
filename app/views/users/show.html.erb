@@ -1,6 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<p>
+<% provide(:title, @user.name) %>
+<% if signed_in? %>
+<!-- <p id="notice"><%= notice %></p>
+ -->
+<!-- <p>
   <b>Name:</b>
   <%= @user.name %>
 </p>
@@ -9,7 +11,28 @@
   <b>Email:</b>
   <%= @user.email %>
 </p>
+ -->
+    <% if @user.directExpirations.any? %>
+      <h3>Próximos Vencimientos (<%= @user.directExpirations.count %>)</h3>
+      <%  @companyExpirations = @user.directExpirations
+        %>
+        <table class="table table-striped">
+		  <tr>
+		    <th>Impuesto</th>
+		    <th>Fecha de Vencimiento</th>
+		  </tr>
 
+		<% @companyExpirations[0].each do |ce| %>
+		  <tr>
+		    <td><%= ce.associated_tax.tax.name %></td>
+		    <td><%= ce.date %></td>
+		  </tr>
+		<% end %>
+		</table>
+    <% end %>
 
+<!-- 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', users_path %> -->
+
+<% end %>
