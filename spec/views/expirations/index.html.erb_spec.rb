@@ -4,13 +4,13 @@ describe "expirations/index" do
   before(:each) do
     assign(:expirations, [
       stub_model(Expiration,
-        :endingFirst => 1,
-        :endingLast => 2,
+        :ending_first => 1,
+        :ending_last => 2,
         :tax_id => 3
       ),
       stub_model(Expiration,
-        :endingFirst => 1,
-        :endingLast => 2,
+        :ending_first => 1,
+        :ending_last => 2,
         :tax_id => 3
       )
     ])

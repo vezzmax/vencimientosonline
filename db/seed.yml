@@ -85,120 +85,120 @@ taxes:
 #   -
 #     tax_id: 1
 #     date: 2012-01-03
-#     endingFirst: 0
-#     endingLast: 1
+#     ending_first: 0
+#     ending_last: 1
 
 #   -
 #     tax_id: 1
 #     date: 2012-01-04
-#     endingFirst: 2
-#     endingLast: 3
+#     ending_first: 2
+#     ending_last: 3
 
 #   -
 #     tax_id: 1
 #     date: 2012-01-05
-#     endingFirst: 4
-#     endingLast: 5
+#     ending_first: 4
+#     ending_last: 5
 
 #   -
 #     tax_id: 1
 #     date: 2012-01-06
-#     endingFirst: 6
-#     endingLast: 7
+#     ending_first: 6
+#     ending_last: 7
 
 #   -
 #     tax_id: 2
 #     date: 2012-01-09
-#     endingFirst: 8
-#     endingLast: 9
+#     ending_first: 8
+#     ending_last: 9
 
 #       -
 #     tax_id: 2
 #     date: 2012-01-03
-#     endingFirst: 0
-#     endingLast: 1
+#     ending_first: 0
+#     ending_last: 1
 
 #   -
 #     tax_id: 3
 #     date: 2012-01-04
-#     endingFirst: 2
-#     endingLast: 3
+#     ending_first: 2
+#     ending_last: 3
 
 #   -
 #     tax_id: 5
 #     date: 2012-01-05
-#     endingFirst: 4
-#     endingLast: 5
+#     ending_first: 4
+#     ending_last: 5
 
 #   -
 #     tax_id: 6
 #     date: 2012-01-06
-#     endingFirst: 6
-#     endingLast: 7
+#     ending_first: 6
+#     ending_last: 7
 
 #   -
 #     tax_id: 5
 #     date: 2012-01-09
-#     endingFirst: 8
-#     endingLast: 9
+#     ending_first: 8
+#     ending_last: 9
 
 #   -
 #     tax_id: 7
 #     date: 2012-01-03
-#     endingFirst: 0
-#     endingLast: 1
+#     ending_first: 0
+#     ending_last: 1
 
 #   -
 #     tax_id: 2
 #     date: 2012-01-04
-#     endingFirst: 2
-#     endingLast: 3
+#     ending_first: 2
+#     ending_last: 3
 
 #   -
 #     tax_id: 2
 #     date: 2012-01-05
-#     endingFirst: 4
-#     endingLast: 5
+#     ending_first: 4
+#     ending_last: 5
 
 #   -
 #     tax_id: 3
 #     date: 2012-01-06
-#     endingFirst: 6
-#     endingLast: 7
+#     ending_first: 6
+#     ending_last: 7
 
 #   -
 #     tax_id: 4
 #     date: 2012-01-09
-#     endingFirst: 8
-#     endingLast: 9
+#     ending_first: 8
+#     ending_last: 9
 
 #   -
 #     tax_id: 5
 #     date: 2012-01-03
-#     endingFirst: 0
-#     endingLast: 1
+#     ending_first: 0
+#     ending_last: 1
 
 #   -
 #     tax_id: 6
 #     date: 2012-01-04
-#     endingFirst: 2
-#     endingLast: 3
+#     ending_first: 2
+#     ending_last: 3
 
 #   -
 #     tax_id: 7
 #     date: 2012-01-05
-#     endingFirst: 4
-#     endingLast: 5
+#     ending_first: 4
+#     ending_last: 5
 
 #   -
 #     tax_id: 7
 #     date: 2012-01-06
-#     endingFirst: 6
-#     endingLast: 7
+#     ending_first: 6
+#     ending_last: 7
 
 #   -
 #     tax_id: 7
 #     date: 2012-01-09
-#     endingFirst: 8
-#     endingLast: 9
+#     ending_first: 8
+#     ending_last: 9
 

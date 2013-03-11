@@ -3,8 +3,8 @@
 <table>
   <tr>
     <th>Date</th>
-    <th>Endingfirst</th>
-    <th>Endinglast</th>
+    <th>Terminación</th>
+    <th>Terminación 2</th>
     <th>Tax</th>
     <th></th>
     <th></th>
@@ -14,8 +14,8 @@
 <% @expirations.each do |expiration| %>
   <tr>
     <td><%= expiration.date %></td>
-    <td><%= expiration.endingFirst %></td>
-    <td><%= expiration.endingLast %></td>
+    <td><%= expiration.ending_first %></td>
+    <td><%= expiration.ending_last %></td>
     <td><%= expiration.tax_id %></td>
     <td><%= link_to 'Show', expiration %></td>
     <td><%= link_to 'Edit', edit_expiration_path(expiration) %></td>

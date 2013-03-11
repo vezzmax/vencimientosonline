@@ -25,8 +25,8 @@ FactoryGirl.define do
 
    factory :expiration do
     date  Date.tomorrow
-    endingFirst "1"
-    endingLast "3"
+    ending_first "1"
+    ending_last "3"
     tax
   end
 

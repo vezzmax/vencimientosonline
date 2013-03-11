@@ -26,7 +26,7 @@ class Company < ActiveRecord::Base
 	#de acuerdo al impuesto pasado como parámetro. 
 	def associateTax (tax)
 	   associated_tax = associated_taxes.create!(company_id: id, tax_id: tax.id)
-	   ce = tax.expirations.where("? between endingFirst and endingLast", verificationDigit)
+	   ce = tax.expirations.where("? between ending_first and ending_last", verificationDigit)
 	   ce.each do |companyExpiration|
 	   	 CompanyExpiration.create!(associated_tax_id: associated_tax.id, date: companyExpiration.date)
 	   end

@@ -3,8 +3,8 @@ require 'spec_helper'
 describe "expirations/show" do
   before(:each) do
     @expiration = assign(:expiration, stub_model(Expiration,
-      :endingFirst => 1,
-      :endingLast => 2,
+      :ending_first => 1,
+      :ending_last => 2,
       :tax_id => 3
     ))
   end

@@ -63,8 +63,8 @@ def make_expirations
     5.times do |k| 
       Expiration.create!(tax_id: tax_id,
                    date: date+k,
-                   endingFirst: k*2,
-                   endingLast: k*2+1)
+                   ending_first: k*2,
+                   ending_last: k*2+1)
     end
   end
 end

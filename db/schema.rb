@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(:version => 20121106024622) do
 
   create_table "expirations", :force => true do |t|
     t.date     "date"
-    t.integer  "endingFirst"
-    t.integer  "endingLast"
+    t.integer  "ending_first"
+    t.integer  "ending_last"
     t.integer  "tax_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

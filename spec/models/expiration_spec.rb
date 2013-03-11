@@ -4,8 +4,8 @@
 #
 #  id          :integer          not null, primary key
 #  date        :date
-#  endingFirst :integer
-#  endingLast  :integer
+#  ending_first :integer
+#  ending_last  :integer
 #  tax_id      :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -16,7 +16,7 @@ require 'spec_helper'
 describe Expiration do
   
   let(:tax) { FactoryGirl.create(:tax) }
-  before { @expiration = tax.expirations.build(date: Date.tomorrow(), endingFirst: "1", endingLast: "3") 
+  before { @expiration = tax.expirations.build(date: Date.tomorrow(), ending_first: "1", ending_last: "3") 
   }
 
   subject { @expiration}
@@ -30,16 +30,12 @@ describe Expiration do
     it { should_not be_valid }
   end
 
-  describe "with endingFirst greater than endingLast" do
+  describe "with ending_first greater than ending_last" do
   	before { 
-  		@expiration.endingFirst = "7"
-  		@expiration.endingLast = "1"
+  		@expiration.ending_first = "7"
+  		@expiration.ending_last = "1"
   	}
   	it { should_not be_valid }
-  end
-
-  describe "the seed should be run first with db:test:prepare" do
-    Expiration.count.should == 5
   end
 
 end
