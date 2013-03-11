@@ -1,6 +1,7 @@
 accounting_entities:
- name: Estudio Apphatie
- description: El estudio principal
+  -
+    name: "Estudio Apphatie"
+    description: "EL estudio"
 
 agencies:
   -
@@ -31,34 +32,173 @@ taxes:
     period: Mensual
     agency_id: 1
 
-expirations:
-  
-  -
-    tax_id: 1
-    date: 2012-01-03
-    endingFirst: 0
-    endingLast: 1
+  - 
+    name: IVA
+    period: Mensual
+    agency_id: 1
 
-  -
-    tax_id: 1
-    date: 2012-01-04
-    endingFirst: 2
-    endingLast: 3
+  - 
+    name: Bienes Personales
+    period: Mensual
+    agency_id: 1
 
-  -
-    tax_id: 1
-    date: 2012-01-05
-    endingFirst: 4
-    endingLast: 5
+  - 
+    name: Debito y Crédito bancario
+    period: Mensual
+    agency_id: 1
 
-  -
-    tax_id: 1
-    date: 2012-01-06
-    endingFirst: 6
-    endingLast: 7
+  - 
+    name: Tasas de Justicia
+    period: Mensual
+    agency_id: 1
+  - 
+    name: Internos
+    period: Mensual
+    agency_id: 1
+  - 
+    name: Ganancia Minima Presunta
+    period: Mensual
+    agency_id: 1
+  - 
+    name: Premios de Azar
+    period: Mensual
+    agency_id: 1
+  - 
+    name: Sellos
+    period: Mensual
+    agency_id: 2
+  - 
+    name: Automotores
+    period: Anual
+    agency_id: 2
+  - 
+    name: Ingresos Brutos
+    period: Mensual
+    agency_id: 2
+  - 
+    name: Inmobiliario 
+    period: Mensual
+    agency_id: 2
 
-  -
-    tax_id: 1
-    date: 2012-01-09
-    endingFirst: 8
-    endingLast: 9
+
+# expirations:
+#   -
+#     tax_id: 1
+#     date: 2012-01-03
+#     endingFirst: 0
+#     endingLast: 1
+
+#   -
+#     tax_id: 1
+#     date: 2012-01-04
+#     endingFirst: 2
+#     endingLast: 3
+
+#   -
+#     tax_id: 1
+#     date: 2012-01-05
+#     endingFirst: 4
+#     endingLast: 5
+
+#   -
+#     tax_id: 1
+#     date: 2012-01-06
+#     endingFirst: 6
+#     endingLast: 7
+
+#   -
+#     tax_id: 2
+#     date: 2012-01-09
+#     endingFirst: 8
+#     endingLast: 9
+
+#       -
+#     tax_id: 2
+#     date: 2012-01-03
+#     endingFirst: 0
+#     endingLast: 1
+
+#   -
+#     tax_id: 3
+#     date: 2012-01-04
+#     endingFirst: 2
+#     endingLast: 3
+
+#   -
+#     tax_id: 5
+#     date: 2012-01-05
+#     endingFirst: 4
+#     endingLast: 5
+
+#   -
+#     tax_id: 6
+#     date: 2012-01-06
+#     endingFirst: 6
+#     endingLast: 7
+
+#   -
+#     tax_id: 5
+#     date: 2012-01-09
+#     endingFirst: 8
+#     endingLast: 9
+
+#   -
+#     tax_id: 7
+#     date: 2012-01-03
+#     endingFirst: 0
+#     endingLast: 1
+
+#   -
+#     tax_id: 2
+#     date: 2012-01-04
+#     endingFirst: 2
+#     endingLast: 3
+
+#   -
+#     tax_id: 2
+#     date: 2012-01-05
+#     endingFirst: 4
+#     endingLast: 5
+
+#   -
+#     tax_id: 3
+#     date: 2012-01-06
+#     endingFirst: 6
+#     endingLast: 7
+
+#   -
+#     tax_id: 4
+#     date: 2012-01-09
+#     endingFirst: 8
+#     endingLast: 9
+
+#   -
+#     tax_id: 5
+#     date: 2012-01-03
+#     endingFirst: 0
+#     endingLast: 1
+
+#   -
+#     tax_id: 6
+#     date: 2012-01-04
+#     endingFirst: 2
+#     endingLast: 3
+
+#   -
+#     tax_id: 7
+#     date: 2012-01-05
+#     endingFirst: 4
+#     endingLast: 5
+
+#   -
+#     tax_id: 7
+#     date: 2012-01-06
+#     endingFirst: 6
+#     endingLast: 7
+
+#   -
+#     tax_id: 7
+#     date: 2012-01-09
+#     endingFirst: 8
+#     endingLast: 9
+
