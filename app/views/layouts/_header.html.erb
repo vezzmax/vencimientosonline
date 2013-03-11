@@ -4,7 +4,7 @@
 			<%= link_to "VencimientosOnline.com", '/static_pages/home', id: "logo" %>
 			<nav>
 				<ul class="nav pull-right">
-					<% if  !current_user==nil || signed_in? %>
+					<% if  user_signed_in? %>
 						<li class="active"><%= link_to "Home", current_user %></li>
 						<li><%= link_to "Vencimientos", '#' %></li>
 					    <li class="dropdown">
@@ -28,18 +28,30 @@
 						      </a>
 						    <ul class="dropdown-menu">
 						      <!-- links -->
-						      <li><%= link_to "Salir", signout_path, method: "delete" %></li>
+						      <li><%= link_to "Salir", destroy_user_session_path, :method => :delete %></li>
 						    </ul>
 						</li>
 					<% else %>
-						<div class="nav pull-right">
+					<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+					<div><%= f.label :email %><br />
+						<%= f.email_field :email, :autofocus => true %></div>
+
+						<div><%= f.label :password %><br />
+							<%= f.password_field :password %></div>
+
+							<% if devise_mapping.rememberable? -%>
+							<div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+							<% end -%>
+
+							<div><%= f.submit "Sign in" %></div>
+					<% end %>
+						<!-- <div class="nav pull-right">
 							<form class="navbar-form pull-right form-inline" accept-charset="UTF-8" action="/sessions" method="post">
 								<input class="span2" type="text" placeholder="Email" id="session_email" name="session[email]">
 								<input class="span2" type="password" placeholder="Contraseña" id="session_password" name="session[password]">
 								<button type="submit" class="btn" name="commit" value="Sign in">Entrar</button>
-								<!--%= link_to "Registrarse", '#', class: "btn" %-->
 							</form>
-						</div>
+						</div> -->
 					<% end %>
 				</ul>
 

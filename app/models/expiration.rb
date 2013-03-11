@@ -2,13 +2,13 @@
 #
 # Table name: expirations
 #
-#  id          :integer          not null, primary key
-#  date        :date
+#  id           :integer          not null, primary key
+#  date         :date
 #  ending_first :integer
 #  ending_last  :integer
-#  tax_id      :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  tax_id       :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
 #
 
 class Expiration < ActiveRecord::Base

@@ -31,8 +31,8 @@ end
 def make_users
   admin = User.create!(name:     "Maximo Vezzosi",
                        email:    "vezzmax@gmail.com",
-                       password: "vezzmax",
-                       password_confirmation: "vezzmax",
+                       password: "vezzmax123",
+                       password_confirmation: "vezzmax123",
                        accounting_entity_id: AccountingEntity.first.id)
   #admin.toggle!(:admin)
   10.times do |n|
