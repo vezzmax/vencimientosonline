@@ -1,22 +1,11 @@
 <% provide(:title, @user.name) %>
 <% if signed_in? %>
-<!-- <p id="notice"><%= notice %></p>
- -->
-<!-- <p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
 
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
- -->
 <div class="row-fluid">
-  	<div class="span12">
+  	<!-- <div class="span12">
     	<h2 class="text-info center">Estudio Contable: <strong><%= @user.accounting_entity.name %></strong>
     	</h2>
-    </div>    
+    </div> -->    
   	<div class="row-fluid">
   		<div class="span12"/>
   	</div>
@@ -24,7 +13,7 @@
   		<div class="span6">
             <% if @user.directExpirations.any? %>
 		      <h3>Próximos Vencimientos (<%= @user.directExpirations.count %>)</h3><br>
-		      <%  @companyExpirations = @user.directExpirations
+		      <%  @companyExpirations = @user.directExpirations.sort { |a,b| a.date <=> b.date }
 		        %>
 		        <table class="table table-striped">
 				  <tr>
@@ -37,7 +26,7 @@
 				  <tr>
 				    <td><%= ce.associated_tax.tax.name %></td>
 				    <td><%= ce.associated_tax.company.name %></td>
-				    <td><%= ce.date %></td>
+				    <td><%= ce.date.to_s(:long) %></td>
 				  </tr>
 				<% end %>
 				</table>
@@ -71,9 +60,5 @@
       <div class="span6"><h3>Vencimientos de otro nivel</h3></div>
   	</div>
 </div>
-
-<!-- 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %> -->
 
 <% end %>

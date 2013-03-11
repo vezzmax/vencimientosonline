@@ -29,7 +29,7 @@ def make_accounting_entity
 end
 
 def make_users
-  admin = User.create!(name:     "Admin User",
+  admin = User.create!(name:     "Maximo Vezzosi",
                        email:    "vezzmax@gmail.com",
                        password: "vezzmax",
                        password_confirmation: "vezzmax",

@@ -1,59 +1,49 @@
 <header class="navbar navbar-inverse navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container">
-			<!--a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<a class="brand" href="#">VencimientosOnline.com</a>
-			</a-->
 			<%= link_to "VencimientosOnline.com", '/static_pages/home', id: "logo" %>
 			<nav>
 				<ul class="nav pull-right">
-					<li><%= link_to "Home", root_path %></li>
-					<% if signed_in? %>
-					<li><%= link_to "Users", '#' %></li>
-					<li id="fat-menu" class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							Account <b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu">
-							<li><%= link_to "Profile", current_user %></li>
-							<li><%= link_to "Settings", '#' %></li>
-							<li class="divider"></li>
-							<li>
-								<%= link_to "Sign out", signout_path, method: "delete" %>
-							</li>
-						</ul>
-					</li>
+					<% if signed_in? || !current_user==nil %>
+						<li class="active"><%= link_to "Home", current_user %></li>
+						<li><%= link_to "Vencimientos", '#' %></li>
+					    <li class="dropdown">
+						    <a class="dropdown-toggle"
+						       data-toggle="dropdown"
+						       href="#">
+						        Presentaciones
+						        <b class="caret"></b>
+						      </a>
+						    <ul class="dropdown-menu">
+						      <!-- links -->
+						      <li><%= link_to "Cargar" %></li>
+						      <li><%= link_to "Ver" %></li>
+						    </ul>
+						</li>
+						<li class="dropdown">
+						    <a class="dropdown-toggle"
+						       data-toggle="dropdown"
+						       href="#">
+						        <%= @user.name %> | <%= @user.accounting_entity.name %>
+						        <b class="caret"></b>
+						      </a>
+						    <ul class="dropdown-menu">
+						      <!-- links -->
+						      <li><%= link_to "Salir", signout_path, method: "delete" %></li>
+						    </ul>
+						</li>
 					<% else %>
-				<div class="nav pull-right">
-						<form class="navbar-form pull-right form-inline" accept-charset="UTF-8" action="/sessions" method="post">
-							<input class="span2" type="text" placeholder="Email" id="session_email" name="session[email]">
-							<input class="span2" type="password" placeholder="Contraseña" id="session_password" name="session[password]">
-							<button type="submit" class="btn" name="commit" value="Sign in">Entrar</button>
-							<!--%= link_to "Registrarse", '#', class: "btn" %-->
-						</form>
+						<div class="nav pull-right">
+							<form class="navbar-form pull-right form-inline" accept-charset="UTF-8" action="/sessions" method="post">
+								<input class="span2" type="text" placeholder="Email" id="session_email" name="session[email]">
+								<input class="span2" type="password" placeholder="Contraseña" id="session_password" name="session[password]">
+								<button type="submit" class="btn" name="commit" value="Sign in">Entrar</button>
+								<!--%= link_to "Registrarse", '#', class: "btn" %-->
+							</form>
 						</div>
 					<% end %>
 				</ul>
 
-					<!--ul class="nav">
-						<li><a href="/static_pages/about">Acerca de</a></li>
-						<li><a href="/static_pages/contact">Contacto</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Más <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
-								<li class="divider"></li>
-								<li class="nav-header">Nav header</li>
-								<li><a href="#">Separated link</a></li>
-								<li><a href="#">One more separated link</a></li>
-							</ul>
-						</li>
-					</ul-->
 			<!--/.nav-collapse -->
 			</nav>
 		</div>
