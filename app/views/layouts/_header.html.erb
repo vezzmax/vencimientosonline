@@ -24,6 +24,7 @@
 						    <a class="dropdown-toggle"
 						       data-toggle="dropdown"
 						       href="#">
+						       <%= @user.name %> | <%= @user.accounting_entity.name %>
 						        <b class="caret"></b>
 						      </a>
 						    <ul class="dropdown-menu">
@@ -32,26 +33,13 @@
 						    </ul>
 						</li>
 					<% else %>
-					<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-					<div><%= f.label :email %><br />
-						<%= f.email_field :email, :autofocus => true %></div>
-
-						<div><%= f.label :password %><br />
-							<%= f.password_field :password %></div>
-
-							<% if devise_mapping.rememberable? -%>
-							<div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-							<% end -%>
-
-							<div><%= f.submit "Sign in" %></div>
+					<div class="nav pull-right">
+					<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "navbar-form pull-right form-inline" }) do |f| %>
+						<%= f.email_field :email, :autofocus => true, :placeholder => "Email", :class => "span2" %>
+					 	<%= f.password_field :password, :placeholder => "Contraseña", :class => "span2" %>
+							<%= f.submit "Entrar" %>
 					<% end %>
-						<!-- <div class="nav pull-right">
-							<form class="navbar-form pull-right form-inline" accept-charset="UTF-8" action="/sessions" method="post">
-								<input class="span2" type="text" placeholder="Email" id="session_email" name="session[email]">
-								<input class="span2" type="password" placeholder="Contraseña" id="session_password" name="session[password]">
-								<button type="submit" class="btn" name="commit" value="Sign in">Entrar</button>
-							</form>
-						</div> -->
+					</div>
 					<% end %>
 				</ul>
 
