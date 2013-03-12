@@ -45,8 +45,6 @@ class User < ActiveRecord::Base
 
   before_save { |user| user.email = email.downcase }
 
-  #before_save :create_remember_token
-
   #Vencimientos de nivel 1
   def directExpirations
     @de = Array.new()
@@ -58,11 +56,5 @@ class User < ActiveRecord::Base
 
   def expirations(withinDays)
   end
-
-  # private
-
-  #   def create_remember_token
-  #     self.remember_token = SecureRandom.urlsafe_base64
-  #   end
 
 end

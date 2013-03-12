@@ -16,8 +16,6 @@ Vencimientos::Application.routes.draw do
 
   resources :accounting_entities
 
-  #resources :sessions, only: [:new, :create, :destroy]
-  
   get "static_pages/home"
 
   get "static_pages/contact"
