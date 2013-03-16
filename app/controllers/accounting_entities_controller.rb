@@ -21,6 +21,20 @@ class AccountingEntitiesController < ApplicationController
     end
   end
 
+=begin
+  # GET /accounting_entities/1/companies
+  # GET /accounting_entities/1/companies.json
+  def show_companies
+    @companies = AccountingEntity.find(params[:id]).companies
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @companies }
+    end
+  end
+=end
+
+
   # GET /accounting_entities/new
   # GET /accounting_entities/new.json
   def new
