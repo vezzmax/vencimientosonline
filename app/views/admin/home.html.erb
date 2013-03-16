@@ -7,5 +7,58 @@
       <li><a href="#"><%= t(:users) %></a></li>
     </ul>
   </div>
-  <%= yield %>
+  <div class="row-fluid">
+  	<div class="well span6">
+  		<h3>Impuestos sin supervisar </h3><br>
+  		<table class="table table-striped">
+  			<tr>
+  				<th>Impuesto</th>
+  				<th>Empresa</th>
+  				<th>Fecha de Vencimiento</th>
+  			</tr>
+
+  			<% 5.times do |c| %>
+  			<tr>
+  				<td>Impuesto #{c}</td>
+  				<td>Empresa #{c}</td>
+  				<td>Fecha #{c}</td>
+  			</tr>
+  			<%end%>
+  		</table>
+  		<div class="pagination">
+  			<ul>
+  				<li><a href="#">Prev</a></li>
+  				<li><a href="#">1</a></li>
+  				<li><a href="#">2</a></li>
+  				<li><a href="#">3</a></li>
+  				<li><a href="#">Next</a></li>
+  			</ul>
+  		</div>
+  	</div>
+  	<div class="well span6">
+  		<h3>Companías</h3><br>
+  		<table class="table table-striped">
+  			<tr>
+  				<th>Nombre</th>
+  				<th>Digito verificador</th>
+  			</tr>
+
+  			<% @companies[0..4].each do |c| %>
+  			<tr>
+  				<td><%= c.name %></td>
+  				<td><%= c.verificationDigit %></td>
+  			</tr>
+  			<%end%>
+  		</table>
+  		<div class="pagination">
+  			<ul>
+  				<li><a href="#">Prev</a></li>
+  				<li><a href="#">1</a></li>
+  				<li><a href="#">2</a></li>
+  				<li><a href="#">3</a></li>
+  				<li><a href="#">Next</a></li>
+  			</ul>
+  		</div>
+  	</div>
+  </div>
 </div>
