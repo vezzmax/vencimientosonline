@@ -1,5 +1,7 @@
 Vencimientos::Application.routes.draw do
 
+  get "admin/home"
+
   devise_for :users
 
   resources :users
