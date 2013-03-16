@@ -16,7 +16,10 @@ Vencimientos::Application.routes.draw do
 
   resources :companies
 
-  resources :accounting_entities
+  resources :accounting_entities 
+  # do 
+  #   resources :companies 
+  # end
 
   get "static_pages/home"
 
@@ -25,8 +28,10 @@ Vencimientos::Application.routes.draw do
   get "static_pages/about"
 
   get "users/new"
-  
 
+  
+  match "accounting_entities/:id/companies" ,  to: 'accounting_entities#companies'
+  
   match '/registrarse',  to: 'users#new'
 
   #login and logout matches
