@@ -37,7 +37,7 @@
 					<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "navbar-form pull-right form-inline" }) do |f| %>
 						<%= f.email_field :email, :autofocus => true, :placeholder => "Email", :class => "span2" %>
 					 	<%= f.password_field :password, :placeholder => "Contraseña", :class => "span2" %>
-							<%= f.submit "Entrar" %>
+						<%= f.submit "Entrar", :class => "btn"%>
 					<% end %>
 					</div>
 					<% end %>
