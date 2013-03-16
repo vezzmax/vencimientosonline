@@ -6,6 +6,10 @@ gem 'bootswatch-rails'
 gem 'jquery-rails'
 gem 'execjs'
 
+gem 'rolify'
+
+
+
 #To generate sample data
 gem 'faker', '1.0.1'
 
