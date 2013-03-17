@@ -1,6 +1,5 @@
 Vencimientos::Application.routes.draw do
 
-  get "admin/home"
 
   devise_for :users
 
@@ -29,6 +28,7 @@ Vencimientos::Application.routes.draw do
 
   get "users/new"
 
+  #get "admin/home"
 
   match "/admin/home" ,  to: 'admin#home'
 

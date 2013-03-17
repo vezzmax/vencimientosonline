@@ -1,1 +1,11 @@
-<p> pagina de root <p>
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#">Root</a>
+    <ul class="nav">
+      <li class="active"><%= link_to t(:entidades_contables), accounting_entities_path %></li>
+      <li><%= link_to t(:companies), :method => 'entities' %></li>
+      <li><%= link_to t(:impuestos), taxes_path %></li>
+    </ul>
+  </div>
+  <%= render :action => 'entities', :template => 'accounting_entities/index' %>
+</div>

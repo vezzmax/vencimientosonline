@@ -2,11 +2,14 @@
   <div class="navbar-inner">
     <a class="brand" href="#">Admin</a>
     <ul class="nav">
-      <li class="active"><%= link_to :companies, companies_path %></li>
+      <li class="active"><%= link_to t(:home), 'admin/home' %></li>
       <li><a href="#"><%= t(:impuestos) %></a></li>
       <li><a href="#"><%= t(:users) %></a></li>
     </ul>
   </div>
+  <% if false %>
+    <%= render :action => 'companies', :template => 'companies/index' %>
+  <% end %>
   <div class="row-fluid">
   	<div class="well span6">
   		<h3>Impuestos sin supervisar </h3><br>

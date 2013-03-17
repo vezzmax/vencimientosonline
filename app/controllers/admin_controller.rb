@@ -2,10 +2,29 @@ class AdminController < ApplicationController
   
   def home
   	@companies = current_user.accounting_entity.companies
+
+	@page = "www.google.com"
   end
 
   def root
-  	@acEntities = AccountingEntity.all;
+  	@accounting_entities = AccountingEntity.all;
   end
+
+  def companies
+    @companies = current_user.accounting_entity.companies
+
+    respond_to do |format|
+      format.html { render "companies/index.html" } # show.html.erb
+      format.json { render json: @companies }
+    end
+  end
+
+  def entities
+  	respond_to do |format|
+      format.html { render "accounting_entities/index.html" } # show.html.erb
+      format.json { render json: @companies }
+  	end
+  end
+
   
 end
