@@ -35,6 +35,13 @@ def make_users
                        password_confirmation: "vezzmax123",
                        accounting_entity_id: AccountingEntity.first.id)
   admin.add_role :admin
+
+  root = User.create!(name:     "root",
+                       email:    "root@root.com",
+                       password: "root1234",
+                       password_confirmation: "root1234")
+  root.add_role :root
+
   #admin.toggle!(:admin)
   10.times do |n|
     name  = Faker::Name.name

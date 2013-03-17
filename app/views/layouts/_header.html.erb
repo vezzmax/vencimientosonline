@@ -9,7 +9,7 @@
 						    <a class="dropdown-toggle"
 						       data-toggle="dropdown"
 						       href="#">
-						       <%= current_user.name %> | <%= current_user.accounting_entity.name %>
+						       <%= current_user.name %> | <%= current_user.accounting_entity.nil? ? "" : current_user.accounting_entity.name %>
 						        <b class="caret"></b>
 						      </a>
 						    <ul class="dropdown-menu">

@@ -29,9 +29,10 @@ Vencimientos::Application.routes.draw do
 
   get "users/new"
 
-  #get "admin/home"
 
   match "/admin/home" ,  to: 'admin#home'
+
+  match "/admin/root" ,  to: 'admin#root'
 
   match "accounting_entities/:id/companies" ,  to: 'accounting_entities#companies'
   
