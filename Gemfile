@@ -6,6 +6,11 @@ gem 'bootswatch-rails'
 gem 'jquery-rails'
 gem 'execjs'
 
+
+#authorization and authentication
+
+gem 'devise'
+gem 'cancan'
 gem 'rolify'
 
 
@@ -55,6 +60,6 @@ end
 # To use debugger
 # gem 'debugger'
 
-gem 'devise'
+
 
 
