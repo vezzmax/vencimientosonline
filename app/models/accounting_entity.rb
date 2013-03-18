@@ -15,4 +15,13 @@ class AccountingEntity < ActiveRecord::Base
   has_many :users
 
   validates :name, presence: true
+
+  #Retorna la lista de impuestos que no tienen supervisor asociado en el nivel 1.
+  def unattendedTaxes
+		@unattendedTaxes = Array.new()
+		companies.each do |company| 
+			@unattendedTaxes.push(company.unattendedTaxes)
+		end 
+		return @unattendedTaxes
+  end
 end

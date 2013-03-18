@@ -15,9 +15,9 @@
     <td><%= tax.name %></td>
     <td><%= tax.period %></td>
     <td><%= tax.agency.name %></td>
-    <td><%= link_to 'Show', tax %></td>
-    <td><%= link_to 'Edit', edit_tax_path(tax) %></td>
-    <td><%= link_to 'Destroy', tax, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t('app.show'), tax %></td>
+    <td><%= link_to t('app.edit'), edit_tax_path(tax) %></td>
+    <td><%= link_to t('app.destroy'), tax, method: :delete, data: { confirm: t('app.confirm')} %></td>
   </tr>
 <% end %>
 </table>

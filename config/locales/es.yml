@@ -1,0 +1,20 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+es:
+  model:
+    company: companía
+    tax: impuesto
+    accounting_entity: estudio contable
+    agency: agencia recaudadora
+
+  app:
+    back: atrás
+    next: siguiente
+    password: contraseña
+    previous: previo
+    name: Nombre
+    period: Período
+    show: Mostrar
+    edit: Editar
+    destroy: Borrar
+    confirm: Está seguro?
