@@ -57,7 +57,7 @@ def make_users
 end
 
 def make_companies
-  100.times do |n|
+  21.times do |n|
     name = Faker::Company.name
     date = Date.today + rand(365)
     aEntity = AccountingEntity.find(rand(3)+1)    
@@ -66,7 +66,7 @@ def make_companies
 end
 
 def make_expirations
-  100.times do |n|
+  20.times do |n|
     date = Date.today + rand(365)
     tax_id = rand(15)+1
     5.times do |k| 

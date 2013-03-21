@@ -111,7 +111,7 @@ describe User do
       @company.associated_taxes.first.supervisions.create!(level: 1, user_id: @user.id)
     }
     it "should have 1 direct expiration to supervise" do
-       @user.directExpirations.size.should > 1
+       @user.directExpirations.size.should >= 1
     end
   end
 
