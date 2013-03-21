@@ -9,14 +9,14 @@ describe "presentations/edit" do
     ))
   end
 
-  it "renders the edit presentation form" do
-    render
+  # it "renders the edit presentation form" do
+  #   render
 
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "form", :action => presentations_path(@presentation), :method => "post" do
-      assert_select "input#presentation_detail", :name => "presentation[detail]"
-      assert_select "input#presentation_expiration_id", :name => "presentation[expiration_id]"
-      assert_select "input#presentation_user_id", :name => "presentation[user_id]"
-    end
-  end
+  #   # Run the generator again with the --webrat flag if you want to use webrat matchers
+  #   assert_select "form", :action => presentations_path(@presentation), :method => "post" do
+  #     assert_select "input#presentation_detail", :name => "presentation[detail]"
+  #     assert_select "input#presentation_expiration_id", :name => "presentation[expiration_id]"
+  #     assert_select "input#presentation_user_id", :name => "presentation[user_id]"
+  #   end
+  # end
 end

@@ -4,7 +4,7 @@ class AdminController < ApplicationController
   	@companies = current_user.accounting_entity.companies
   	@unattended = current_user.accounting_entity.unattended_taxes
 
-	@page = "www.google.com"
+	  #@page = "www.google.com"
   end
 
   def root

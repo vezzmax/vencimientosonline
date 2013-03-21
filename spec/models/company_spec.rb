@@ -55,7 +55,8 @@ describe Company do
       @company.associated_taxes.count.should == 1
     end
     it "should have company expirations created" do
-      @company.company_expirations.count.should == 1
+      #we should change this to create data to expect.
+      @company.company_expirations.count.should == 5
     end
     it "should have unnatendedTaxes" do
       @company.unattendedTaxes.count.should == 1
