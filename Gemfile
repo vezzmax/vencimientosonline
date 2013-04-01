@@ -1,9 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-gem 'bootstrap-sass', '~> 2.3.0.1'
-gem 'bootswatch-rails'
-gem 'jquery-rails'
 gem 'execjs'
 
 
@@ -44,7 +41,14 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.2'
   gem 'uglifier', '>= 1.2.3'
   gem 'therubyracer'
+  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+  gem 'jquery-ui-rails'
+  gem 'bootstrap-sass', '~> 2.3.0.1'
+  gem 'bootswatch-rails'
+  gem 'jquery-rails'
 end
+
+gem 'will_paginate'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 

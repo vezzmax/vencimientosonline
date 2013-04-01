@@ -1,10 +1,17 @@
-@import "bootswatch/cerulean/variables";
+/*@import "bootswatch/cerulean/variables";
 @import 'bootstrap';
 body { padding-top: 60px; }
 @import "bootstrap-responsive";
 
 // And finally bootswatch style itself
-@import "bootswatch/cerulean/bootswatch";
+@import "bootswatch/cerulean/bootswatch";*/
+
+/*
+ *= require jquery.ui.core
+ *= require jquery.ui.theme
+ *= require dataTables/jquery.dataTables
+ *= require dataTables/src/demo_table_jui
+*/
 
 /* universal */
 
@@ -141,9 +148,6 @@ $grayMediumLight: #eaeaea;
 }
 .taxName {
   display: block;
-}
-.date {
-  color: $grayLight;
 }
 
 /*aside {

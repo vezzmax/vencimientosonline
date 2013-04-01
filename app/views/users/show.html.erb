@@ -1,16 +1,11 @@
 <% provide(:title, @user.name) %>
 <% if user_signed_in? %>
 
-<div class="row-fluid">
-	<div class="span12"/>
-</div>
-<div class="row">
-	<div class="well span12">
       <h3>Vencimientos (<%= @user.expirations.count %>)</h3>
 
       <%  @companyExpirations = @user.expirations.sort { |a,b| a.date <=> b.date }
         %>
-        <table id="expirations" class="table table-striped table-bordered">
+        <table id="expirations" class="display">
         	<thead>
         		<tr>
         			<th>Impuesto</th>
@@ -59,15 +54,4 @@
         			</tbody>    	
         		</table>
 
-		<div class="pagination">
-			<ul>
-				<li><a href="#">Prev</a></li>
-				<li><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">Next</a></li>
-			</ul>
-		</div>
-	</div>
-</div>
 <% end %>
