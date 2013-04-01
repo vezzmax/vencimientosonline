@@ -56,7 +56,16 @@ class User < ActiveRecord::Base
     return @de
   end
 
-  def expirations(withinDays)
+  def expirations
+    @allExp = Array.new()
+    supervisions.each do |supervision|
+      sups = supervision.associated_tax.company_expirations
+      sups.each do |sup| 
+        sup["level"] = supervision.level
+      end
+      @allExp.push(*sups)
+    end
+    return @allExp
   end
 
 end

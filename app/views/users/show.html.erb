@@ -5,24 +5,67 @@
 	<div class="span12"/>
 </div>
 <div class="row">
-	<div class="well span6">
-    <% if @user.directExpirations.any? %>
-      <h3>Próximos Vencimientos (<%= @user.directExpirations.count %>)</h3><br>
-      <%  @companyExpirations = @user.directExpirations.sort { |a,b| a.date <=> b.date }
+	<div class="well span12">
+      <h3>Vencimientos (<%= @user.expirations.count %>)</h3>
+
+      <%  @companyExpirations = @user.expirations.sort { |a,b| a.date <=> b.date }
         %>
         <table class="table table-striped">
 		  <tr>
-		    <th>Impuesto</th>
-		    <th>Empresa</th>
-		    <th>Fecha de Vencimiento</th>
+		    <th>
+		    	<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            		Impuesto
+            		<span class="caret"></span>
+            	</button>
+            		<!-- dropdown menu links -->
+            		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+            			<li><a tabindex="-1" href="#">IVA</a></li>
+            			<li><a tabindex="-1" href="#">Otro Impuesto</a></li>
+            			<li><a tabindex="-1" href="#">Otro Impuesto</a></li>
+            			<li class="divider"></li>
+            			<li><a tabindex="-1" href="#">Deshacer Filtro</a></li>
+            		</ul>
+		    </th>
+		    <th><button type="button" class="btn btn-primary">Empresa</button></th>
+		    <th><button type="button" class="btn btn-primary">Fecha de Vencimiento</button></th>
+		    <th><button type="button" class="btn btn-primary">Tipo</button></th>
+		    <th><button type="button" class="btn btn-primary">Estado</button></th>
+		    <th><button type="button" class="btn btn-primary">Nivel</button></th>
+		    <th><button type="button" class="btn btn-primary">Acción</button></th>
 		  </tr>
 
-		<% @companyExpirations[0..4].each do |ce| %>
+		<% @companyExpirations.each do |ce| %>
 		  <tr>
 		    <td><%= ce.associated_tax.tax.name %></td>
 		    <td><%= ce.associated_tax.company.name %></td>
 		    <td><%= ce.date.to_s(:long) %></td>
-		  </tr>
+		    <td><%= ["Presentación", "Solo Presentación", "Solo Pago"][rand(3)] %></td>
+		    <% estado = ["A Vencer", "Vencido", "Cumplido"][rand(3)]
+		    	if estado == "A Vencer" then @label_type = "label-warning"
+		    								 @icon = "icon-warning-sign"
+               elsif  estado == "Vencido" then @label_type = "label-important" 
+               								   @icon = "icon-remove"
+               elsif  estado == "Cumplido" then @label_type = "label-success"
+               									@icon = "icon-ok"
+               else @label_type = ""	
+            end %>
+		    <td><span class="label <%= @label_type %>"><i class="<%= @icon %>"></i> <%= estado %></span></td>
+		    <% if ce.level == 1 then @badge_type = "badge-important"
+               elsif  ce.level == 2 then @badge_type = "badge-warning" 
+               elsif  ce.level == 3 then @badge_type = "badge-success"
+               else @badge_type = ""	
+            end %>  
+            <td><span class="badge <%= @badge_type %>"> <%= ce.level %></span></td>
+            <td>
+            	<button class="btn btn-small btn-success">Presentar</button>
+            	<button class="btn btn-small btn-success dropdown-toggle" data-toggle="dropdown">
+            		<span class="caret"></span>
+            	</button>
+            	<ul class="dropdown-menu">
+            		<!-- dropdown menu links -->
+            	</ul>
+            </td>
+            </tr>
 		<% end %>
 		</table>
 
@@ -35,99 +78,6 @@
 				<li><a href="#">Next</a></li>
 			</ul>
 		</div>
-    <% end %>
-	</div>
-	<div class="well span6">
-		<h3>Impuestos supervisados</h3> <br>
-		<%  @supervisions = @user.supervisions
-        %>
-        <table class="table table-hover">
-		  <tr>
-		    <th>Empresa</th>
-		    <th>Impuesto</th>
-		    <th>Nivel</th>
-		  </tr>
-
-			<% @supervisions[0..4].each do |sup| %>
-			  <tr>
-			    <td><%= sup.associated_tax.company.name %></td>
-			    <td><%= sup.associated_tax.tax.name %></td>
-			    <% if sup.level > 1 then 
-			    	@badge_type = "badge-success"
-			       else @badge_type = "badge-important" 
-			       	end %>	
-			    <td><span class="badge <%= @badge_type %>"> <%= sup.level %></span></td>
-			  </tr>
-			<% end %>
-		</table>
-		<div class="pagination">
-			<ul>
-				<li><a href="#">Prev</a></li>
-				<li><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">Next</a></li>
-			</ul>
-		</div>
-	</div>
-<div class="row-fluid">
-	<div class="well span6">
-		<h3>Últimas presentaciones</h3>
-		<table class="table table-hover">
-		  <tr>
-		    <th>Impuesto</th>
-		    <th>Empresa</th>
-		    <th>Fecha</th>
-		  </tr>
-
-			<% @presentations = [
-				{:impuesto => "Cualquiera",:empresa => "Cualquiera",:fecha => "27/01/2012"},
-				{:impuesto => "Cualquiera",:empresa => "Cualquiera",:fecha => "27/01/2012"},
-				{:impuesto => "Cualquiera",:empresa => "Cualquiera",:fecha => "27/01/2012"}
-			]
-			   @presentations.each do |sup| %>
-			  <tr>
-			    <td><%= sup[:impuesto] %></td>
-			    <td><%= sup[:empresa] %></td>
-			    <td><%= sup[:fecha] %> </td>
-			  </tr>
-			<% end %>
-		</table>
-	</div>
-	<div class="well span6">
-		<h3>Vencimientos de otro nivel</h3>
-		<table class="table table-hover">
-		  <tr>
-		    <th>Impuesto</th>
-		    <th>Empresa</th>
-		    <th>Responsables</th>
-		  </tr>
-
-			<% @vencimientos = [
-				{:impuesto => "Cualquiera",:empresa => "Cualquiera",:boton => "danger"},
-				{:impuesto => "Cualquiera",:empresa => "Cualquiera",:boton => "success"},
-				{:impuesto => "Cualquiera",:empresa => "Cualquiera",:boton => "warning"}
-			]
-			   @vencimientos.each do |sup| %>
-			  <tr>
-			    <td><%= sup[:impuesto] %></td>
-			    <td><%= sup[:empresa] %></td>
-			    <td>
-			    	<div class="btn-group">
-			    		<a class="btn btn-<%= sup[:boton]%> dropdown-toggle" data-toggle="dropdown" href="#">
-			    			Marcelo Salas - 1
-			    			<!-- <span class="caret"></span> -->
-			    		</a>
-			    		<ul class="dropdown-menu">
-			    			<li>Enzo Francescoli - 2</li>
-			    			<li>Maximo Vezzosi - 3</li>
-			    			<li>Lucio Caporale - 4</li>
-			    		</ul>
-			    	</div>
-			    </td>
-			  </tr>
-			<% end %>
-		</table>
 	</div>
 </div>
 <% end %>
