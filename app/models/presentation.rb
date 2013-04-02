@@ -13,8 +13,10 @@
 #
 
 class Presentation < ActiveRecord::Base
-  attr_accessible :date, :detail, :user_id, :associated_tax_id
+  attr_accessible :date, :detail, :user_id, :expiration_date, :associated_tax_id
 
   belongs_to :user
   belongs_to :associated_tax
+
+  validates :expiration_date, presence: true
 end

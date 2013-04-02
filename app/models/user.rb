@@ -69,12 +69,17 @@ class User < ActiveRecord::Base
     #faltan las presentations
   end
 
-  def makePresentation (associated_tax_id, date=Date.today, detail=nil)
-    Presentation.create!(
-      :associated_tax_id => id, 
+  #Creates a presentation with the provided information
+  #Returns a the new presentation created
+  def makePresentation (company_expiration, detail=nil, date=Date.today)
+    presentation = Presentation.create!(
+      :associated_tax_id => company_expiration.associated_tax.id, 
       :user_id => self.id,
       :detail => detail, 
-      :date => date)
+      :date => date,
+      :expiration_date => company_expiration.date)
+    company_expiration.delete;
+    return presentation
   end
 
 end

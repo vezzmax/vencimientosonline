@@ -113,14 +113,14 @@ describe User do
 
   describe "when the user make a presentation" do
     before {
-
+      @ce = @company.company_expirations[0]
     }
 
-    it "a new Presentation should exist" do
-      ce = @company.company_expirations[0]
-      @user.makePresentation(:associated_tax_id => ce.associated_tax)
-    end
-    it "should be 1 less company expiration" do
+    it "a new Presentation should exist and company expiration should be deleted" do
+      detail = "Detalles de la presentacion"
+      presentation = @user.makePresentation(@ce, detail)
+      lambda {CompanyExpiration.find(@ce.id)}.should raise_error(ActiveRecord::RecordNotFound)
+      presentation.detail.should == detail
     end
   end
 
