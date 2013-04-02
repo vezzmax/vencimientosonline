@@ -63,10 +63,10 @@ ActiveRecord::Schema.define(:version => 20130316025345) do
     t.date     "date"
     t.date     "expiration_date"
     t.string   "detail"
-    t.integer  "asociated_tax_id"
+    t.integer  "associated_tax_id"
     t.integer  "user_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "roles", :force => true do |t|

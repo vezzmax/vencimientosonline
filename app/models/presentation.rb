@@ -13,7 +13,7 @@
 #
 
 class Presentation < ActiveRecord::Base
-  attr_accessible :date, :detail
+  attr_accessible :date, :detail, :user_id, :associated_tax_id
 
   belongs_to :user
   belongs_to :associated_tax

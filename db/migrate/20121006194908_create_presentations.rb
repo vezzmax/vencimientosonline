@@ -4,7 +4,7 @@ class CreatePresentations < ActiveRecord::Migration
       t.date :date
       t.date :expiration_date
       t.string :detail
-      t.integer :asociated_tax_id
+      t.integer :associated_tax_id
       t.integer :user_id
 
       t.timestamps

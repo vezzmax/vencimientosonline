@@ -24,10 +24,16 @@ require 'spec_helper'
 
 describe User do
 
-  before { @user = User.new(name: "Example User", 
-  	email: "user@example.com", 
-  	password: "password", 
-  	password_confirmation: "password") }
+  before { 
+      @user = User.find(3)
+      @user.should_not be_nil
+      @company = Company.find(3)
+      @company.should_not be_nil
+      @tax = Tax.find(1)
+      @tax.should_not be_nil
+      @company.associateTax(@tax)
+      @company.associated_taxes.first.supervisions.create!(level: 1, user_id: @user.id)
+    }
 
   subject { @user }
 
@@ -77,11 +83,11 @@ describe User do
 
   describe "when email address is already taken" do
     before do
-      user_with_same_email = @user.dup
-      user_with_same_email.save
+      @user_with_same_email = @user.dup
+      @user_with_same_email.save
     end
 
-    it { should_not be_valid }
+    it { @user_with_same_email.should_not be_valid }
   end
 
   describe "when password is not present" do
@@ -100,18 +106,21 @@ describe User do
   end
 
   describe "when a company has a tax assigned and the tax has a supervisor" do
-    before { 
-      @user = User.find(3)
-      @user.should_not be_nil
-      @company = Company.find(3)
-      @company.should_not be_nil
-      @tax = Tax.find(1)
-      @tax.should_not be_nil
-      @company.associateTax(@tax)
-      @company.associated_taxes.first.supervisions.create!(level: 1, user_id: @user.id)
-    }
     it "should have 1 direct expiration to supervise" do
        @user.directExpirations.size.should >= 1
+    end
+  end
+
+  describe "when the user make a presentation" do
+    before {
+
+    }
+
+    it "a new Presentation should exist" do
+      ce = @company.company_expirations[0]
+      @user.makePresentation(:associated_tax_id => ce.associated_tax)
+    end
+    it "should be 1 less company expiration" do
     end
   end
 

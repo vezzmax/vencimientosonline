@@ -66,6 +66,15 @@ class User < ActiveRecord::Base
       @allExp.push(*sups)
     end
     return @allExp
+    #faltan las presentations
+  end
+
+  def makePresentation (associated_tax_id, date=Date.today, detail=nil)
+    Presentation.create!(
+      :associated_tax_id => id, 
+      :user_id => self.id,
+      :detail => detail, 
+      :date => date)
   end
 
 end
