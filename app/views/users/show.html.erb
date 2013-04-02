@@ -2,10 +2,9 @@
 <% if user_signed_in? %>
 
       <h3>Vencimientos (<%= @user.expirations.count %>)</h3>
-
       <%  @companyExpirations = @user.expirations.sort { |a,b| a.date <=> b.date }
         %>
-        <table id="expirations" class="table table-bordered table-stripped display">
+        <table id="expirations" class="table table-bordered table-striped display">
         	<thead>
         		<tr>
         			<th>Impuesto</th>
@@ -41,17 +40,25 @@
         					end %>  
         					<td><span class="badge <%= @badge_type %>"> <%= ce.level %></span></td>
         					<td>
-        						<button class="btn btn-small btn-success">Presentar</button>
-        						<button class="btn btn-small btn-success dropdown-toggle" data-toggle="dropdown">
-        							<span class="caret"></span>
-        						</button>
-        						<ul class="dropdown-menu">
-        							<!-- dropdown menu links -->
-        						</ul>
+        						<a href="#myModal" role="button" class="btn btn-small btn-primary" data-toggle="modal">Presentar</a>
         					</td>
         				</tr>
         				<% end %>
         			</tbody>    	
         		</table>
-
+                 
+                <!-- Modal -->
+                <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel">Presentar Impuesto</h3>
+                  </div>
+                  <div class="modal-body">
+                    <p>One fine body…</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                    <button class="btn btn-primary">Confirmar Presentación</button>
+                  </div>
+                </div>
 <% end %>
