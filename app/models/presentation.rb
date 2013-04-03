@@ -19,4 +19,5 @@ class Presentation < ActiveRecord::Base
   belongs_to :associated_tax
 
   validates :expiration_date, presence: true
+  #validates :date, presence: true
 end

@@ -27,3 +27,5 @@ $(document).on "click", "#presentarButton", ->
   $("#cexpiration").val myBookId
   $("#presentar").modal "show"
 
+ # $("#12").children()[0].innerHTML
+

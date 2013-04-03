@@ -19,7 +19,7 @@
         	</thead>
         	<tbody>
         		<% @companyExpirations.each do |ce| %>
-        		<tr>
+        		<tr id="<%= ce.id %>">
         			<td><%= ce.associated_tax.tax.name %></td>
         			<td><%= ce.associated_tax.company.name %></td>
         			<td><%= ce.date.to_s(:long) %></td>
