@@ -16,6 +16,7 @@ load_and_authorize_resource
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @presentation = Presentation.new
     
     respond_to do |format|
       format.html # show.html.erb
@@ -82,4 +83,5 @@ load_and_authorize_resource
       format.json { head :no_content }
     end
   end
+
 end
