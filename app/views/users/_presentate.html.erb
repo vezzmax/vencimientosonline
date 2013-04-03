@@ -7,7 +7,7 @@
     <p> Usted está por declarar el siguiente impuesto como presentado:</p>
 
     <p> Detalles de la presentación: </p>
-    <%= form_for(@presentation, :class => "form-horizontal") do |f| %>
+    <%= form_for(@presentation, :class => "form-horizontal", :url => "/presentar") do |f| %>
     <% if @presentation.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@presentation.errors.count, "error") %> prohibited this presentation from being saved:</h2>
@@ -32,12 +32,14 @@
       <%= f.label "Usuario encargado de la presentación" %><br />
       <%= current_user.name %> <button class="btn">Cambiar</button>
     </div>
-    <% end %>
+    <%= hidden_field_tag(:cexpiration, "") %>
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-    <button class="btn btn-primary">Confirmar Presentación</button>
+    <%= f.submit :class => "btn btn-primary" %>
+    <!-- <button class="btn btn-primary">Confirmar Presentación</button> -->
   </div>
+  <% end %>
 </div>
 
 

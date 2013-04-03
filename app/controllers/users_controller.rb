@@ -84,4 +84,20 @@ load_and_authorize_resource
     end
   end
 
+  def presentar
+
+    cexpiration_id = params[:cexpiration]
+    cexpiration = CompanyExpiration.find(cexpiration_id)
+    
+    detail = params[:detail]
+    date = params[:date]
+    
+    current_user.makePresentation(cexpiration, detail, date)
+
+    respond_to do |format|
+      format.html { redirect_to current_user }
+      format.json { head :no_content }
+    end
+  end
+
 end

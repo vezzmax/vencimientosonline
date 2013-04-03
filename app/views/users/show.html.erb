@@ -42,7 +42,7 @@
         					<td><span class="badge <%= @badge_type %>"> <%= ce.level %></span></td>
         					<td>
                                 <% if estado != "Cumplido" then %>
-        						<a href="#presentar" role="button" class="btn btn-small btn-primary" data-toggle="modal">Presentar</a>
+        						<a id="presentarButton" href="#presentar" role="button" class="btn btn-small btn-primary" data-toggle="modal" data-id="<%= ce.id %>">Presentar</a>
                                 <% else %>
                                 <a href="#detalles" role="button" class="btn btn-small btn-primary" data-toggle="modal">Detalles</a>
                                 <% end %>

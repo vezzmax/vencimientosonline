@@ -22,5 +22,8 @@ $(document).ready ->
       sNext: "Siguiente"
       sPrevious: "Anterior"
 
-
+$(document).on "click", "#presentarButton", ->
+  myBookId = $(this).data("id")
+  $("#cexpiration").val myBookId
+  $("#presentar").modal "show"
 

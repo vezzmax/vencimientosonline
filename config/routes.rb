@@ -36,6 +36,8 @@ Vencimientos::Application.routes.draw do
   
   match '/registrarse',  to: 'users#new'
 
+  match '/presentar',  to: 'users#presentar'
+
   #login and logout matches
   # match '/signup',  to: 'users#new'
   # match '/signin',  to: 'sessions#new'
