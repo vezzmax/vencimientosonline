@@ -1,0 +1,43 @@
+<div id="presentar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="presentarLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="presentarLabel">Presentar Impuesto</h3>
+  </div>
+  <div class="modal-body">
+    <p> Usted está por declarar el siguiente impuesto como presentado:</p>
+
+    <p> Detalles de la presentación: </p>
+    <%= form_for(@presentation, :class => "form-horizontal") do |f| %>
+    <% if @presentation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@presentation.errors.count, "error") %> prohibited this presentation from being saved:</h2>
+
+      <ul>
+        <% @presentation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label "Fecha en que se presentó" %><br />
+      <%= f.date_select :date %>
+    </div>
+    <div class="field">
+      <%= f.label :observaciones %><br />
+      <%= f.text_area :detail, :rows => 3 %>
+    </div>
+    <div class="field">
+      <%= f.label "Usuario encargado de la presentación" %><br />
+      <%= current_user.name %> <button class="btn">Cambiar</button>
+    </div>
+    <% end %>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+    <button class="btn btn-primary">Confirmar Presentación</button>
+  </div>
+</div>
+
+
